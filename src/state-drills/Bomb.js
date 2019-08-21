@@ -7,8 +7,9 @@ class Bomb extends React.Component {
 
   bombWord() {
     const { count } = this.state;
-    if (count >= 8) {
-      clearInterval(this.interval); //why won't this clear the interval??
+    if (count % 8 === 0) {
+      //clearInterval(this.interval); //why won't this clear the interval??
+      //this.myInterval();
       return "BOOM!!!!";
     } else if (count % 2 === 0) {
       return "tick";
@@ -19,17 +20,21 @@ class Bomb extends React.Component {
 
   componentDidMount() {
     //console.log("componentDidMount");
-    this.interval = setInterval(() => {
-      this.setState({
-        count: this.state.count + 1
-      });
-    }, 1000);
+    this.myInterval();
   }
 
   componentWillUnount() {
     clearInterval(this.interval);
     //this.setState({ count: 0 });
     //this.componentDidMount();
+  }
+
+  myInterval() {
+    this.interval = setInterval(() => {
+      this.setState({
+        count: this.state.count + 1
+      });
+    }, 1000);
   }
 
   render() {

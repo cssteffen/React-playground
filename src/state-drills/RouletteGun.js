@@ -38,7 +38,7 @@ class RouletteGun extends React.Component {
       return "spinning the chamber and pulling the trigger!...";
     } else if (chamber === bulletInChamber) {
       return "BANG!!!!";
-    } else {
+    } else if (chamber !== null) {
       return "you're safe!";
     }
   }
