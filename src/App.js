@@ -9,7 +9,8 @@ import Bomb from "./state-drills/Bomb";
 import RouletteGun from "./state-drills/RouletteGun";
 import Tabs from "./state/Tabs";
 import Accordion from "./state-drills/Accordion";
-
+import DemonymApp from "./demonymapp/demonymApp";
+import AppLang from "./lang-context/AppLang";
 //array of objects each with a name & content
 const tabsProp = [
   {
@@ -69,6 +70,16 @@ class App extends Component {
           <div className="box">
             <h3>Accordion</h3>
             <Accordion />
+          </div>
+          <div className="box">
+            <h3>Demonym API</h3>
+            <DemonymApp />
+          </div>
+        </div>
+        <div className="container">
+          <div className="box">
+            <h3>Lang-Context</h3>
+            <AppLang />
           </div>
         </div>
       </div>
